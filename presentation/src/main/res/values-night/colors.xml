@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="shimmer">#414243</color>
+    <color name="placeholder">#DDDDDD</color>
+    <color name="input_bg">#3A3B3C</color>
+    <color name="display_small">#FFFFFFFF</color>
+    <color name="text_medium">#FFB0B3B8</color>
+</resources>
