@@ -90,10 +90,6 @@ dependencies {
     //accompanist
     implementation("com.google.accompanist:accompanist-systemuicontroller:0.32.0")
 
-    //Paging 3
-    implementation("androidx.paging:paging-compose:3.2.1")
-    implementation("androidx.paging:paging-runtime-ktx:3.2.1")
-
     //hilt
     implementation("com.google.dagger:hilt-android:2.50")
     ksp("com.google.dagger:hilt-android-compiler:2.50")

@@ -52,4 +52,8 @@ dependencies {
     implementation("androidx.hilt:hilt-navigation-fragment:1.1.0")
     implementation("androidx.hilt:hilt-navigation-compose:1.1.0")
 
+    //Paging 3
+    api("androidx.paging:paging-runtime-ktx:3.2.1")
+
+
 }
