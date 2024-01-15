@@ -1,5 +1,6 @@
 package com.newsApp.presentation.ui.common
 
+import android.content.res.Configuration
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -22,7 +23,7 @@ fun NewsButton(
         onClick = onClick,
         colors = ButtonDefaults.buttonColors(
             containerColor = MaterialTheme.colorScheme.primary,
-            contentColor = colorResource(id = R.color.display_small)
+            contentColor = colorResource(id = R.color.text_revert)
         ),
         shape = RoundedCornerShape(6.dp)
     ) {
@@ -35,7 +36,8 @@ fun NewsButton(
     }
 }
 
-@Preview
+@Preview(showBackground = true)
+@Preview(uiMode = Configuration.UI_MODE_NIGHT_YES, showBackground = true)
 @Composable
 fun NewsButtonPreview() {
     NewsButton(text = "Button", onClick = {})

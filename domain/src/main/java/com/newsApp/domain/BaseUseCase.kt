@@ -6,7 +6,7 @@ import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 
 abstract class BaseUseCase<in Params, out Type> where Type : Any? {
-    abstract fun run(params: Params): Utils.Either<Exception, Type>
+    abstract suspend fun run(params: Params): Utils.Either<Exception, Type>
 
     operator fun invoke(
         scope: CoroutineScope,

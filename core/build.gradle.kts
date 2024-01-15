@@ -58,6 +58,9 @@ dependencies {
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
 
 
+    //datastore
+    implementation("androidx.datastore:datastore-preferences:1.0.0")
+
     //hilt
     implementation("com.google.dagger:hilt-android:2.50")
     ksp("com.google.dagger:hilt-android-compiler:2.50")

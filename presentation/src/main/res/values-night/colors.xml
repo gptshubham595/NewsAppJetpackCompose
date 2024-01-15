@@ -4,5 +4,6 @@
     <color name="placeholder">#DDDDDD</color>
     <color name="input_bg">#3A3B3C</color>
     <color name="display_small">#FFFFFFFF</color>
+    <color name="text_revert">#000</color>
     <color name="text_medium">#FFB0B3B8</color>
 </resources>

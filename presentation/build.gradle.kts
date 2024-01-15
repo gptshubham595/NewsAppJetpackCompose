@@ -84,10 +84,6 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.7.0")
 
-
-    //datastore
-    implementation("androidx.datastore:datastore-preferences:1.0.0")
-
     //compose foundation
     implementation("androidx.compose.foundation:foundation:1.5.4")
 

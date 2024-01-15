@@ -23,6 +23,7 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.newsApp.presentation.onboarding.OnBoardingEvent
 import com.newsApp.presentation.onboarding.ui.components.OnBoardingPageUI
 import com.newsApp.presentation.onboarding.ui.components.PageIndicator
 import com.newsApp.presentation.onboarding.viewmodels.OnBoardingViewModel
@@ -34,7 +35,10 @@ import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun OnBoardingScreen(onBoardingViewModel: OnBoardingViewModel = viewModel()) {
+fun OnBoardingScreen(
+    onBoardingViewModel: OnBoardingViewModel = viewModel(),
+    event: (OnBoardingEvent) -> Unit
+) {
     // Observe the LiveData from the ViewModel
     val onBoardingPageList = onBoardingViewModel.onBoardingPageListLiveData.observeAsState()
     // Fetch data if not already loaded
@@ -102,6 +106,7 @@ fun OnBoardingScreen(onBoardingViewModel: OnBoardingViewModel = viewModel()) {
                     NewsButton(text = buttonState.value[1]) {
                         if (pagerState.currentPage == onBoardingPageList.value?.size?.minus(1)) {
                             // Navigate to next screen
+                            event(OnBoardingEvent.SaveAppEntry("random_token"))
                         } else {
                             scope.launch {
                                 pagerState.animateScrollToPage(pagerState.currentPage + 1)
@@ -110,8 +115,7 @@ fun OnBoardingScreen(onBoardingViewModel: OnBoardingViewModel = viewModel()) {
                     }
                 }
             }
-
-
+            Spacer(modifier = Modifier.weight(0.5f))
         }
     }
 }

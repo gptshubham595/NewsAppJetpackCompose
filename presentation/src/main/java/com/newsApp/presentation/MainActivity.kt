@@ -11,6 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import androidx.core.view.WindowCompat
 import com.newsApp.domain.models.onboarding.PageEntity
 import com.newsApp.domain.repositories.onboarding.OnBoardingRepository
 import com.newsApp.domain.usecases.onboarding.GetOnBoardingPageListUseCase
@@ -27,11 +28,14 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        WindowCompat.setDecorFitsSystemWindows(window, false)
         installSplashScreen()
         setContent {
             NewsAppJCTheme {
                 Box(modifier = Modifier.background(color = MaterialTheme.colorScheme.background)) {
-                    OnBoardingScreen(onBoardingViewModel)
+                    OnBoardingScreen(onBoardingViewModel, event = {
+                        onBoardingViewModel::onEvent
+                    })
                 }
             }
         }
@@ -42,7 +46,7 @@ class MainActivity : ComponentActivity() {
     fun DefaultPreview() {
         NewsAppJCTheme {
             Box(modifier = Modifier.background(color = MaterialTheme.colorScheme.background)) {
-                OnBoardingScreen(onBoardingViewModel)
+                OnBoardingScreen(onBoardingViewModel, onBoardingViewModel::onEvent)
             }
         }
     }
